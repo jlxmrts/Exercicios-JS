@@ -1,0 +1,23 @@
+<input type="number" id="n1" placeholder="Primeiro número">
+<input type="number" id="n2" placeholder="Segundo número">
+
+<button onclick="maiorNumero()">Verificar</button>
+
+<p id="resultado"></p>
+
+<script>
+    function maiorNumero() {
+        let n1 = Number(document.getElementById("n1").value);
+        let n2 = Number(document.getElementById("n2").value);
+
+        let resultado = document.getElementById("resultado");
+
+        if (n1 > n2) {
+            resultado.innerHTML = "O maior número é: " + n1;
+        } else if (n2 > n1) {
+            resultado.innerHTML = "O maior número é: " + n2;
+        } else {
+            resultado.innerHTML = "Os números são iguais";
+        }
+    }
+</script>

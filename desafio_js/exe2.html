@@ -1,0 +1,35 @@
+<input type="number" id="peso" placeholder="Peso">
+<input type="number" id="altura" placeholder="Altura">
+
+<button onclick="calcularIMC()">Calcular IMC</button>
+
+<p id="resultado"></p>
+<p id="classificacao"></p>
+
+<script>
+
+function calcularIMC() {
+
+    let peso = Number(document.getElementById("peso").value);
+    let altura = Number(document.getElementById("altura").value);
+
+    let imc = peso / (altura * altura);
+
+    document.getElementById("resultado").innerHTML =
+        "IMC: " + imc.toFixed(2);
+
+    if (imc < 18.5) {
+        document.getElementById("classificacao").innerHTML = "Magreza";
+    }
+    else if (imc <= 24.9) {
+        document.getElementById("classificacao").innerHTML = "Normal";
+    }
+    else if (imc <= 29.9) {
+        document.getElementById("classificacao").innerHTML = "Sobrepeso";
+    }
+    else {
+        document.getElementById("classificacao").innerHTML = "Obesidade";
+    }
+}
+
+</script>

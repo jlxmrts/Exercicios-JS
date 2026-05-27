@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Caixa de Mercado</title>
+</head>
+<body>
+
+    <h1>Sistema de Caixa</h1>
+
+    <input type="number" id="n1" placeholder="Digite o primeiro valor">
+    <input type="number" id="n2" placeholder="Digite o segundo valor">
+
+    <button onclick="calcular()">Calcular</button>
+
+    <h3>Soma: <span id="soma"></span></h3>
+    <h3>Subtração: <span id="subtracao"></span></h3>
+    <h3>Multiplicação: <span id="multiplicacao"></span></h3>
+    <h3>Divisão: <span id="divisao"></span></h3>
+
+    <script>
+
+        function calcular() {
+
+            let n1 = Number(document.getElementById("n1").value);
+            let n2 = Number(document.getElementById("n2").value);
+
+            document.getElementById("soma").innerHTML = n1 + n2;
+
+            document.getElementById("subtracao").innerHTML = n1 - n2;
+
+            document.getElementById("multiplicacao").innerHTML = n1 * n2;
+
+            if (n2 !== 0) {
+                document.getElementById("divisao").innerHTML = n1 / n2;
+            } else {
+                document.getElementById("divisao").innerHTML = "Não é possível dividir por zero";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

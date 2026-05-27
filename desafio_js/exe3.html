@@ -1,0 +1,33 @@
+<input type="number" id="numero">
+
+<button onclick="jogar()">Tentar</button>
+
+<p id="mensagem"></p>
+<p id="tentativas"></p>
+
+<script>
+
+let secreto = Math.floor(Math.random() * 100) + 1;
+let contador = 0;
+
+function jogar() {
+
+    let numero = Number(document.getElementById("numero").value);
+
+    contador++;
+
+    if (numero > secreto) {
+        document.getElementById("mensagem").innerHTML = "Muito alto";
+    }
+    else if (numero < secreto) {
+        document.getElementById("mensagem").innerHTML = "Muito baixo";
+    }
+    else {
+        document.getElementById("mensagem").innerHTML = "Acertou!";
+    }
+
+    document.getElementById("tentativas").innerHTML =
+        "Tentativas: " + contador;
+}
+
+</script> 

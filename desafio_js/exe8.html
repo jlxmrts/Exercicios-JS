@@ -4,3 +4,30 @@
 
 <p id="invertida"></p>
 <p id="resultado"></p>
+
+<script>
+
+function verificar() {
+
+    let frase =
+        document.getElementById("frase").value;
+
+    frase = frase.toLowerCase().replaceAll(" ", "");
+
+    let invertida =
+        frase.split("").reverse().join("");
+
+    document.getElementById("invertida").innerHTML =
+        "Invertida: " + invertida;
+
+    if (frase === invertida) {
+        document.getElementById("resultado").innerHTML =
+            "É palíndromo";
+    }
+    else {
+        document.getElementById("resultado").innerHTML =
+            "Não é palíndromo";
+    }
+}
+
+</script>

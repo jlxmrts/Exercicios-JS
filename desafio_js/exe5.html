@@ -1,0 +1,53 @@
+<h1 id="tempo">00:00</h1>
+
+<button onclick="iniciar()">Iniciar</button>
+<button onclick="pausar()">Pausar</button>
+<button onclick="resetar()">Resetar</button>
+
+<script>
+
+let segundos = 0;
+let intervalo;
+
+function atualizar() {
+
+    let min = Math.floor(segundos / 60);
+    let seg = segundos % 60;
+
+    if (min < 10) {
+        min = "0" + min;
+    }
+
+    if (seg < 10) {
+        seg = "0" + seg;
+    }
+
+    document.getElementById("tempo").innerHTML =
+        min + ":" + seg;
+}
+
+function iniciar() {
+
+    intervalo = setInterval(function () {
+
+        segundos++;
+
+        atualizar();
+
+    }, 1000);
+}
+
+function pausar() {
+    clearInterval(intervalo);
+}
+
+function resetar() {
+
+    clearInterval(intervalo);
+
+    segundos = 0;
+
+    atualizar();
+}
+
+</script>

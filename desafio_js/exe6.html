@@ -1,0 +1,38 @@
+<button onclick="jogar('Pedra')">Pedra</button>
+<button onclick="jogar('Papel')">Papel</button>
+<button onclick="jogar('Tesoura')">Tesoura</button>
+
+<p id="resultado"></p>
+
+<script>
+
+function jogar(usuario) {
+
+    let opcoes = ["Pedra", "Papel", "Tesoura"];
+
+    let computador =
+        opcoes[Math.floor(Math.random() * 3)];
+
+    let resultado = "";
+
+    if (usuario === computador) {
+        resultado = "Empate";
+    }
+
+    else if (
+        (usuario === "Pedra" && computador === "Tesoura") ||
+        (usuario === "Papel" && computador === "Pedra") ||
+        (usuario === "Tesoura" && computador === "Papel")
+    ) {
+        resultado = "Você venceu";
+    }
+
+    else {
+        resultado = "Computador venceu";
+    }
+
+    document.getElementById("resultado").innerHTML =
+        "Computador: " + computador + "<br>" + resultado;
+}
+
+</script> 

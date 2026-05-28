@@ -1,0 +1,35 @@
+<input type="text" id="numeros"
+placeholder="Ex: 5,2,8,1">
+
+<button onclick="organizar()">Organizar</button>
+
+<p id="crescente"></p>
+<p id="decrescente"></p>
+
+<script>
+
+function organizar() {
+
+    let numeros =
+        document.getElementById("numeros").value;
+
+    let lista = numeros.split(",");
+
+    lista = lista.map(Number);
+
+    let crescente = [...lista].sort(function(a, b) {
+        return a - b;
+    });
+
+    let decrescente = [...lista].sort(function(a, b) {
+        return b - a;
+    });
+
+    document.getElementById("crescente").innerHTML =
+        "Crescente: " + crescente;
+
+    document.getElementById("decrescente").innerHTML =
+        "Decrescente: " + decrescente;
+}
+
+</script>
